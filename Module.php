@@ -13,6 +13,7 @@ namespace Company;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 use User\Model\UserModel;
+use Company\Model\CompanyModel;
 
 class Module {
 
@@ -25,7 +26,7 @@ class Module {
         $userModel->initialize($e->getApplication()->getServiceManager());
         $uri = $e->getRequest()->getUri()->getPath();
 
-        $companyModel = new \Company\Model\CompanyModel();
+        $companyModel = new CompanyModel();
         $companyModel->initialize($e->getApplication()->getServiceManager());
         $companyDomain = $companyModel->getCompanyDomain();
 
