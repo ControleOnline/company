@@ -29,9 +29,9 @@ class Module {
         $companyModel->initialize($e->getApplication()->getServiceManager());
         $companyDomain = $companyModel->getCompanyDomain();
 
-        if ($companyDomain->getDomainType() === 'cfc' && $userModel->loggedIn() && \Core\Helper\Url::isRedirectUrl($uri) && !$userModel->getUserCompany()) {
+        if (($companyDomain->getDomainType() === 'cfcc' || $companyDomain->getDomainType() === 'cfc') && $userModel->loggedIn() && \Core\Helper\Url::isRedirectUrl($uri) && !$userModel->getUserCompany()) {
             $response = $e->getResponse();
-            $response->getHeaders()->addHeaderLine('Location', '/company/create-user-company');
+            $response->getHeaders()->addHeaderLine('Location', $companyDomain->getDomainType() === 'cfc' ? '/company/create-user-company' : '/company/create-corporate-user-company');
             $response->setStatusCode(302);
             $response->sendHeaders();
             exit;
