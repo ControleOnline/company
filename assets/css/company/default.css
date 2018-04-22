@@ -1,0 +1,34 @@
+.show-contact{
+    float: right;
+    position: absolute;
+    right: 50px;
+}
+.show-contact-container{
+    padding-left: 50px;
+    padding-bottom: 50px;
+    padding-right: 50px;
+}
+.btn-squad{
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+    padding: 10px;
+    width: 100%;
+    margin-top: 50px;
+}
+.card-block{
+    padding: 50px;
+    padding-bottom: 10px;
+}
+
+.app-default>.app-container{
+    padding-bottom: 240px !important;
+}
+
+@media (max-width: 767px){
+    .row {
+        margin-top: 90px;
+    }
+}

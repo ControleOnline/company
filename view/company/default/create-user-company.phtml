@@ -1,0 +1,117 @@
+<div class="app-container app-login" data-need-login="true">    
+    <div class="flex-center">        
+        <div class="app-header"></div>
+        <div class="app-body">
+            <div class="app-block">                
+                <div class="app-form">                    
+                    <form id="create-company-form" class="form-horizontal" data-success-url="/company" action="/company/create-user-company.json" method="POST" data-svp-id="gmapsstreetviewpano-company" data-svm-id="gmapsstreetviewmap-company">
+                        <div class="row">
+                            <div class="form-suggestion">
+                                <?= $this->translate('Company Details'); ?>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon3">
+                                        <i class="fa fa-user" aria-hidden="true"></i></span>
+                                    <input id="document-number" data-mask="({mask: '99.999.999/9999-99','clearIncomplete': true})" name="document-number" data-cnpj-in-use="/user/user-in-use/username/" type="text" placeholder="<?= $this->translate('Enter document number of your Company') ?>" class="form-control input-md" required>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon2">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                    <input id="alias" data-mask="" name="alias" type="text" placeholder="<?= $this->translate('Enter alias of your Company') ?>" class="form-control input-md" required>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">
+                                        <i class="fa fa-paper-plane" aria-hidden="true"></i></span>
+                                    <input id="name" name="name" type="text" placeholder="<?= $this->translate('Enter name of your Company') ?>" class="form-control input-md" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-suggestion">
+                                <?= $this->translate('Company Address'); ?>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <label class="control-label address-input-toggle" for="address-nickname"><?= $this->translate('Address nickname') ?></label>
+                                <div class="input-group address-input-toggle">                                    
+                                    <input value="<?= $this->translate('Main address') ?>" data-address-nickname="address-nickname" name="address-nickname" type="text" placeholder="<?= $this->translate('Enter alias of your address') ?>" class="form-control input-md" required>
+                                </div>                        
+                            </div>                                        
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"></div>
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <label class="control-label" for="address-cep"><?= $this->translate('Postal code') ?></label>
+                                <div class="input-group">                                                        
+                                    <input data-default-contry="Brazil" data-cep="cep" data-mask="({mask: '99999-999','clearIncomplete': true})" name="cep" data-postmon="address-search" type="text" placeholder="<?= $this->translate('Enter CEP of your address') ?>" class="form-control input-md" required>
+                                </div>
+                            </div>                                
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <label class="control-label" for="street"><?= $this->translate('Street adress') ?></label>
+                                <div class="input-group">                                                        
+                                    <input data-street="street" name="street" type="text" placeholder="<?= $this->translate('Enter address of your Company') ?>" class="panoramio-search form-control input-md" required readonly>
+                                </div>
+                            </div>        
+                            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                <label class="control-label" for="address-number"><?= $this->translate('Address number') ?></label>
+                                <div class="input-group">                                                        
+                                    <input  data-address-number="address-number" name="address-number" type="text" placeholder="<?= $this->translate('Enter address number') ?>" class="panoramio-search form-control input-md" required>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <label class="control-label" for="complement"><?= $this->translate('Address complement') ?></label>
+                                <div class="input-group">                                                        
+                                    <input data-complement="complement" name="complement" type="text" placeholder="<?= $this->translate('Enter complement of your address') ?>" class="form-control input-md">
+                                </div>                        
+                            </div>                                
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <label class="control-label" for="district"><?= $this->translate('Address district') ?></label>
+                                <div class="input-group">                                    
+                                    <input data-district="district" name="district" type="text" placeholder="<?= $this->translate('Enter district of your address') ?>" class="panoramio-search form-control input-md" required readonly>
+                                </div>                        
+                            </div>
+                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                                <label class="control-label" for="city"><?= $this->translate('Address city') ?></label>
+                                <div class="input-group">                                                        
+                                    <input data-city="city" name="city" type="text" placeholder="<?= $this->translate('Enter city of your address') ?>" class="panoramio-search form-control input-md" required readonly>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                <label class="control-label" for="state"><?= $this->translate('Address state') ?></label>
+                                <div class="input-group">                                                                           
+                                    <input data-state="state" name="state" type="text" placeholder="<?= $this->translate('Enter state of your address') ?>" class="panoramio-search form-control input-md" required readonly>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                                <label class="control-label" for="country"><?= $this->translate('Address country') ?></label>
+                                <div class="input-group">                                                                            
+                                    <input data-country="country" name="country" type="text" placeholder="<?= $this->translate('Enter country of your address') ?>" class="panoramio-search form-control input-md" required readonly>
+                                </div>                        
+                            </div>
+                        </div>
+                        <div class="text-center add-quote-address">            
+                            <input type="hidden" name="lat" data-lat="lat">
+                            <input type="hidden" name="lng" data-lng="lng">
+                            <button data-success-url="/company" data-save="/company/create-user-company.json" id="save" name="save" class="btn btn-success btn-submit"><?= $this->translate('Save') ?></button>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div id="gmapsstreetview" class="row">                        
+                            <span class="line-street-view pull-left"> </span>
+                            <div id="gmapsstreetviewpano-company" class="gmapsstreetviewpano col-xs-12 col-sm-12 col-md-6 col-lg-6"></div>
+                            <div id="gmapsstreetviewmap-company " class="gmapsstreetviewmap col-xs-12 col-sm-12 col-md-6 col-lg-6"></div>                        
+                        </div>  
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="app-footer">
+        </div>
+    </div>
+</div>

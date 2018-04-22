@@ -1,0 +1,32 @@
+#gmaps-autocomplete{
+    height: 40px;
+    padding: 0 20px;
+    font-weight: 200;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid #dfe6e8;
+    border-right: none;
+    background-color: transparent;
+    width: 100%;
+}
+
+#btn-search{
+    width: 40px;
+    height: 40px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px solid #dfe6e8;
+    border-left: none;
+    background-color: transparent;
+    color: #dfe6e8;
+    font-size: 1.4em;
+    position: relative;
+    right: 0;
+    top: 0;
+    margin-top: -40px;
+    margin-right: -25px;
+    float: right;
+}
+#search-container{
+    padding-right: 25px;
+}
